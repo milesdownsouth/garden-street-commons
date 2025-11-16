@@ -7,13 +7,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // GSAP Sequential Animations
     // Create animation timeline (elements start hidden via CSS)
-    const timeline = gsap.timeline({ defaults: { ease: 'power3.out', duration: 0.8 } });
+    const timeline = gsap.timeline({ defaults: { ease: 'power3.out', duration: 0.4 } });
 
     timeline
         .to('.main-heading', { opacity: 1, y: 0 })
-        .to('.subheading', { opacity: 1, y: 0 }, '+=0.2')
-        .to('.coming-soon-badge', { opacity: 1, y: 0 }, '+=0.2')
-        .to('.cta-button', { opacity: 1, y: 0 }, '+=0.2');
+        .to('.subheading', { opacity: 1, y: 0 }, '+=0.1')
+        .to('.coming-soon-badge', { opacity: 1, y: 0 }, '+=0.1')
+        .to('.cta-button', { opacity: 1, y: 0 }, '+=0.1');
 
     // Email CTA Button Handler
     const ctaButton = document.querySelector('.cta-button');
