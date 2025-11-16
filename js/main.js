@@ -1,9 +1,25 @@
 /**
  * Garden Street Commons - Main JavaScript
- * Handles interactions and dynamic behavior
+ * Handles interactions and dynamic behavior with GSAP animations
  */
 
 document.addEventListener('DOMContentLoaded', function() {
+
+    // GSAP Sequential Animations
+    // Set initial state (hidden and slightly below)
+    gsap.set(['.logo-container', '.main-heading', '.subheading', '.cta-button'], {
+        opacity: 0,
+        y: 30
+    });
+
+    // Create animation timeline
+    const timeline = gsap.timeline({ defaults: { ease: 'power3.out', duration: 0.8 } });
+
+    timeline
+        .to('.logo-container', { opacity: 1, y: 0 })
+        .to('.main-heading', { opacity: 1, y: 0 }, '+=0.2')
+        .to('.subheading', { opacity: 1, y: 0 }, '+=0.2')
+        .to('.cta-button', { opacity: 1, y: 0 }, '+=0.2');
 
     // Email CTA Button Handler
     const ctaButton = document.querySelector('.cta-button');
@@ -23,51 +39,17 @@ document.addEventListener('DOMContentLoaded', function() {
             // Open email client
             window.location.href = mailtoLink;
         });
-
-        // Add subtle animation on button hover
-        ctaButton.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-2px)';
-        });
-
-        ctaButton.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-        });
     }
 
-    // Add fade-in animation on page load
-    const container = document.querySelector('.container');
-    if (container) {
-        container.style.opacity = '0';
-        container.style.transform = 'translateY(20px)';
-        container.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-
-        setTimeout(function() {
-            container.style.opacity = '1';
-            container.style.transform = 'translateY(0)';
-        }, 100);
-    }
-
-    // Instagram icon animation
+    // Instagram icon hover animation
     const instagramIcon = document.querySelector('.instagram-icon');
     if (instagramIcon) {
         instagramIcon.addEventListener('mouseenter', function() {
-            this.style.transform = 'scale(1.1) rotate(5deg)';
+            gsap.to(instagramIcon, { scale: 1.1, duration: 0.3, ease: 'power2.out' });
         });
 
         instagramIcon.addEventListener('mouseleave', function() {
-            this.style.transform = 'scale(1) rotate(0deg)';
-        });
-    }
-
-    // Badge pulse animation on hover
-    const badge = document.querySelector('.coming-soon-badge');
-    if (badge) {
-        badge.addEventListener('mouseenter', function() {
-            this.style.animation = 'pulse 0.5s ease';
-        });
-
-        badge.addEventListener('animationend', function() {
-            this.style.animation = '';
+            gsap.to(instagramIcon, { scale: 1, duration: 0.3, ease: 'power2.out' });
         });
     }
 
@@ -75,11 +57,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const logo = document.querySelector('.logo');
     if (logo) {
         logo.addEventListener('mouseenter', function() {
-            this.style.transform = 'scale(1.05) rotate(-2deg)';
+            gsap.to(logo, { scale: 1.05, duration: 0.3, ease: 'power2.out' });
         });
 
         logo.addEventListener('mouseleave', function() {
-            this.style.transform = 'scale(1) rotate(0deg)';
+            gsap.to(logo, { scale: 1, duration: 0.3, ease: 'power2.out' });
         });
     }
 
@@ -101,17 +83,3 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Garden Street Commons - Landing Page Loaded');
     console.log('Coming Soon: June 2026');
 });
-
-// Add pulse animation to CSS dynamically
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes pulse {
-        0%, 100% {
-            transform: scale(1);
-        }
-        50% {
-            transform: scale(1.05);
-        }
-    }
-`;
-document.head.appendChild(style);
