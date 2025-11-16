@@ -6,18 +6,11 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     // GSAP Sequential Animations
-    // Set initial state (hidden and slightly below)
-    gsap.set(['.logo-container', '.main-heading', '.subheading', '.coming-soon-badge', '.cta-button'], {
-        opacity: 0,
-        y: 30
-    });
-
-    // Create animation timeline
+    // Create animation timeline (elements start hidden via CSS)
     const timeline = gsap.timeline({ defaults: { ease: 'power3.out', duration: 0.8 } });
 
     timeline
-        .to('.logo-container', { opacity: 1, y: 0 })
-        .to('.main-heading', { opacity: 1, y: 0 }, '+=0.2')
+        .to('.main-heading', { opacity: 1, y: 0 })
         .to('.subheading', { opacity: 1, y: 0 }, '+=0.2')
         .to('.coming-soon-badge', { opacity: 1, y: 0 }, '+=0.2')
         .to('.cta-button', { opacity: 1, y: 0 }, '+=0.2');

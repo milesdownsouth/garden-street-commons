@@ -144,6 +144,8 @@ body {
     margin: var(--spacing-sm) 0;
     text-transform: uppercase;
     white-space: nowrap;
+    opacity: 0;
+    transform: translateY(30px);
 }
 
 /* Subheading */
@@ -155,7 +157,8 @@ body {
     text-transform: uppercase;
     color: var(--color-text-light);
     margin: var(--spacing-sm) 0 var(--spacing-md);
-    opacity: 0.95;
+    opacity: 0;
+    transform: translateY(30px);
 }
 
 /* Coming Soon Badge */
@@ -168,6 +171,8 @@ body {
     border: 2px solid var(--color-badge-border);
     border-radius: 60px;
     margin: var(--spacing-md) 0;
+    opacity: 0;
+    transform: translateY(30px);
 }
 
 .coming-soon-badge span {
@@ -197,6 +202,8 @@ body {
     cursor: pointer;
     transition: var(--transition-smooth);
     margin-top: var(--spacing-lg);
+    opacity: 0;
+    transform: translateY(30px);
 }
 
 .cta-button:hover {
