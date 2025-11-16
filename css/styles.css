@@ -282,6 +282,7 @@ body {
     .main-heading {
         letter-spacing: 0.05em;
         margin: 0.5rem 0;
+        white-space: normal;
     }
 
     .subheading {
