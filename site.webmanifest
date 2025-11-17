@@ -1,0 +1,17 @@
+{
+  "name": "Garden Street Commons",
+  "short_name": "GSC",
+  "description": "Neighborhood Retail in the Arts District. Coming June 2026.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#E8E8D9",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
